@@ -1,0 +1,70 @@
+/* 增加页面整体的Apple风格 */
+body {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f2f2f7;  /* 比之前稍微亮一点 */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* 游戏的主要容器 */
+.container {
+    text-align: center;
+    padding: 40px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* 鼠标悬停时容器微微上浮 */
+.container:hover {
+    transform: translateY(-5px);
+}
+
+/* 标题样式 */
+h1 {
+    font-size: 36px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 10px;
+}
+
+/* 记分板的样式 */
+h2 {
+    font-size: 24px;
+    font-weight: 400;
+    color: #8e8e93;
+    margin-bottom: 20px;
+}
+
+/* 画布的阴影和圆角样式 */
+canvas {
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    background-color: #d1d1d6;
+    display: block;
+    margin: 0 auto;
+}
+
+/* 开始按钮的样式 */
+#startButton {
+    background-color: #007aff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 122, 255, 0.4);
+    transition: background-color 0.3s ease;
+}
+
+/* 鼠标悬停时按钮的颜色变化 */
+#startButton:hover {
+    background-color: #005ecb;
+}
