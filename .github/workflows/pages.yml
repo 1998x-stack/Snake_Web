@@ -18,6 +18,14 @@ jobs:
           node-version: "22"
       - run: node --test tests/*.test.cjs
       - run: node --check js/utils.js && node --check js/snake.js
+      - name: Install Playwright test runner and Chromium
+        run: |
+          npm install --no-save --no-package-lock @playwright/test@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Browser gameplay smoke tests
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 &
+          npx playwright test tests/browser.spec.cjs --workers=1
   deploy:
     if: github.event_name != 'pull_request'
     needs: [test]
@@ -28,8 +36,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
-        with:
-          enablement: true
       - name: Stage static site only
         run: |
           mkdir -p dist/js

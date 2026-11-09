@@ -24,7 +24,7 @@ node --check js/utils.js
 node --check js/snake.js
 ```
 
-CI 自动测试纯规则与 JS 语法；**CI 不等于已完成真实浏览器端 E2E 验证**。
+CI 包括纯规则、JS 语法及 **Playwright Chromium 真实浏览器冒烟测试**。当相应 Actions 作业成功后，可认为 CI 环境下的开始/暂停/控制/撞墙/重开路径已验证；仍需在正式 Pages URL 上做部署后检查。
 
 ## 发布
 
@@ -36,5 +36,6 @@ CI 自动测试纯规则与 JS 语法；**CI 不等于已完成真实浏览器�
 - `js/utils.js`：无 DOM 依赖的纯规则模块，负责食物、碰撞、转向、状态迁移。
 - `js/snake.js`：Canvas 绘制、键盘/触控、唯一计时器。
 - `tests/logic.test.cjs`：固定场景、终局、增长、尾格等规则测试。
+- `tests/browser.spec.cjs`：Chromium 真实交互的移动端/桌面冒烟测试。
 
 独立重构仅涉及此仓库的代码，不复制第三方音视频素材。相关目录：[1998x-stack/games](https://github.com/1998x-stack/games)。
