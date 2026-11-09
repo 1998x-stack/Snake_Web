@@ -1,20 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake Game</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0e1626">
+  <meta name="description" content="Snake Web — a responsive, keyboard- and touch-friendly snake game.">
+  <title>Snake Web · 贪吃蛇</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Snake Game</h1>
-        <h2>Score: <span id="score">0</span></h2>
-        <canvas id="gameCanvas" width="400" height="400"></canvas>
-        <button id="startButton">Restart Game</button>
-    </div>
-    <script src="js/utils.js"></script>
-    <script src="js/snake.js"></script>
-</body>
-</html>
+<main class="panel">
+  <div class="eyebrow">1998x · ARCADE</div>
+  <h1>🐍 贪吃蛇 <span>Snake Web</span></h1>
+  <p class="help">吃掉红色食物，避免撞墙或碰到自己。支持方向键、WASD 和触摸操作。</p>
+  <div class="scoreboard"><strong>分数：<span id="score">0</span></strong><span id="gameStatus" role="status" aria-live="polite">准备就绪</span></div>
+  <canvas id="gameCanvas" width="400" height="400" aria-label="20 × 20 格贪吃蛇游戏棋盘"></canvas>
+  <div class="actions"><button id="playButton" type="button">开始</button><button id="resetButton" type="button">重新开始</button></div>
+  <div class="dpad" aria-label="触摸方向控制">
+    <button data-direction="up" aria-label="向上" type="button">↑</button>
+    <div><button data-direction="left" aria-label="向左" type="button">←</button><button data-direction="down" aria-label="向下" type="button">↓</button><button data-direction="right" aria-label="向右" type="button">→</button></div>
+  </div>
+  <p class="hint">空格：暂停/继续 · R：重新开始 · 食物不会出现在蛇身上。</p>
+  <a class="back" href="https://github.com/1998x-stack/Snake_Web">源代码与问题反馈 ↗</a>
+</main>
+<script src="js/utils.js"></script>
+<script src="js/snake.js"></script>
+</body></html>

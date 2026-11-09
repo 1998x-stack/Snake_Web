@@ -1,70 +1,11 @@
-/* 增加页面整体的Apple风格 */
-body {
-    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: #f2f2f7;  /* 比之前稍微亮一点 */
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-/* 游戏的主要容器 */
-.container {
-    text-align: center;
-    padding: 40px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
-    transition: transform 0.3s ease-in-out;
-}
-
-/* 鼠标悬停时容器微微上浮 */
-.container:hover {
-    transform: translateY(-5px);
-}
-
-/* 标题样式 */
-h1 {
-    font-size: 36px;
-    font-weight: 600;
-    color: #1d1d1f;
-    margin-bottom: 10px;
-}
-
-/* 记分板的样式 */
-h2 {
-    font-size: 24px;
-    font-weight: 400;
-    color: #8e8e93;
-    margin-bottom: 20px;
-}
-
-/* 画布的阴影和圆角样式 */
-canvas {
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    background-color: #d1d1d6;
-    display: block;
-    margin: 0 auto;
-}
-
-/* 开始按钮的样式 */
-#startButton {
-    background-color: #007aff;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 18px;
-    border-radius: 10px;
-    margin-top: 20px;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 122, 255, 0.4);
-    transition: background-color 0.3s ease;
-}
-
-/* 鼠标悬停时按钮的颜色变化 */
-#startButton:hover {
-    background-color: #005ecb;
-}
+:root{color-scheme:dark;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:#0e1626;color:#e9f8ff}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:20px;background:radial-gradient(ellipse at 70% 15%,#213854,#0e1626 70%)}
+.panel{width:min(100%,540px);padding:clamp(18px,5vw,36px);background:#19283c;border:1px solid #354762;border-radius:24px;box-shadow:0 22px 60px #0005;text-align:center}
+.eyebrow{font-size:.7rem;color:#78e7bc;letter-spacing:.22em;font-weight:700}h1{font-size:clamp(1.8rem,5vw,2.6rem);margin:10px 0}h1 span{font-size:.8rem;color:#9bb9cf;font-weight:500}.help,.hint{font-size:.9rem;color:#b0c4d7}
+.scoreboard{display:flex;gap:8px;justify-content:space-between;align-items:center;flex-wrap:wrap;padding:10px 0}.scoreboard strong{font-size:1.1rem}.scoreboard span[role=status]{font-size:.8rem;color:#b4e5d5}
+canvas{display:block;width:100%;height:auto;aspect-ratio:1;border:2px solid #40516a;border-radius:12px;touch-action:none;background:#101b30}
+button{cursor:pointer;border:1px solid #648478;border-radius:12px;padding:11px 18px;background:#1d554a;color:white;font:inherit;font-weight:650;min-width:90px}button:hover{background:#286b5b}button:focus-visible,a:focus-visible{outline:3px solid #affed6;outline-offset:3px}button:disabled{opacity:.45;cursor:not-allowed}
+.actions{display:flex;justify-content:center;gap:12px;margin:20px 0 14px}.actions button:last-child{background:#293b55;border-color:#536f85}
+.dpad{display:grid;justify-items:center;gap:6px}.dpad>div{display:flex;gap:6px}.dpad button{min-width:62px;padding:9px 16px;background:#293b55}
+.back{display:inline-block;margin-top:8px;color:#9df2d2;font-size:.85rem;text-underline-offset:3px}
+@media(max-width:460px){.panel{padding:16px}.scoreboard{justify-content:center}.actions button{min-width:0;flex:1}.dpad button{min-width:60px}}
